@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.set_index.html#pandas.DataFrame.set_index
+"""https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.set_index.html
 """
 import pandas as pd
 
