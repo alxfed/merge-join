@@ -12,6 +12,8 @@ def main():
     )
     data = data_with_column_names.set_index(keys='a', drop=False, verify_integrity=False)
     # drop means delete the column used for index creation
+    old_data = data.reset_index(drop=True)
+    # back to the initial state
     print('ok')
     return
 
