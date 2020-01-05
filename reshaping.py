@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
-"""...
+"""https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html
 """
 import pandas as pd
 
 
 def main():
-    print('ok')
     return
 
 
