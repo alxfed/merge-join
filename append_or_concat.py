@@ -15,8 +15,7 @@ def main():
          [4, 5, 6],
          [7, 8, 0]], index=['a', 'e', 'c'], columns= [1, 11, 2]
     )
-    result = data1.append(data2, sort=None)
-    result2 = data1.append(data2, ignore_index=True)
+    result = pd.concat(objs=[data1, data2], axis=1)
     # ignore_index just drops the index from the result and replaces it with {RangeIndex: 6}
     return
 
