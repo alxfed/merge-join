@@ -2,6 +2,7 @@
 """...
 """
 import pandas as pd
+import numpy as np
 
 
 def main():
@@ -30,6 +31,18 @@ def main():
          [7, 8, 0]], index=['a', 'b', 'c'], columns= [10, 11, 12]
     )
     # numbers as column names
+    data_with_nested_dict = pd.DataFrame(
+        {'first_column': {'first_row': 1, 'second_row': 2, 'third_row':3},
+         'second_column': {'first_row': 4, 'second_row': 5, 'third_row':6},
+         'third_column': {'first_row': 7, 'second_row': 8, 'third_row':9},}
+    )
+    numpy_from_nested_lists = np.array(
+        [[1, 2, 3],
+         [4, 5, 6],
+         [7, 8, 0]]
+    )
+    # inner lists are rows
+    pd_data = pd.DataFrame(numpy_from_nested_lists)
     print('ok')
     return
 
