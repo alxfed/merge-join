@@ -3,6 +3,20 @@
 """
 import pandas as pd
 import numpy as np
+import string
+
+
+def work_on_rows(row, ref, sta):
+    d = '';
+    e = '';
+    f = ''
+    if row['name'] in ref['name'].values:
+        d = row['name']
+    if row['address'] in sta['name'].values:
+        e = sta['address']
+    if row['phone'] in sta['phone'].values:
+        f = row['phone']
+    return pd.Series([d, e, f])
 
 
 def main():
@@ -36,6 +50,7 @@ def main():
          'second_column': {'first_row': 4, 'second_row': 5, 'third_row':6},
          'third_column': {'first_row': 7, 'second_row': 8, 'third_row':9},}
     )
+    # the numpy way of making an array
     numpy_from_nested_lists = np.array(
         [[1, 2, 3],
          [4, 5, 6],
@@ -43,6 +58,14 @@ def main():
     )
     # inner lists are rows
     pd_data = pd.DataFrame(numpy_from_nested_lists)
+
+    # random letters arranged into a dataframe
+    letters = list(string.ascii_lowercase)
+    dataframe_of_random_letters = pd.DataFrame(
+        np.random.choice(letters, size=(3, 3)),
+        index=['a', 'b', 'c'], columns=[0, 1, 2])
+
+ 
     print('ok')
     return
 
