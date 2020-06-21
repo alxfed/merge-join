@@ -20,6 +20,10 @@ def work_on_rows(row, ref, sta):
 
 
 def main():
+    indx = pd.Index(data=[1, 2, 3], name='ind', dtype=int)
+    indexed_series = pd.Series(data=[1, 2, 3], index=indx, name='ind_series')
+    print(indexed_series)
+    
     data_without_column_or_row_names = pd.DataFrame(
         [[1, 2, 3],
          [4, 5, 6],
