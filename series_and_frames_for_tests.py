@@ -7,8 +7,8 @@ import string
 
 
 def work_on_rows(row, ref, sta):
-    d = '';
-    e = '';
+    d = ''
+    e = ''
     f = ''
     if row['name'] in ref['name'].values:
         d = row['name']

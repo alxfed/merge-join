@@ -19,6 +19,27 @@ def main():
     return
 
 
+def another_main():
+    indx = pd.MultiIndex.from_tuples([('Parameters', 'time'),
+                                      ('Parameters', 'price'),
+                                      ('Weight', ''),
+                                      ('Users', ''),
+                                      ('Metrics', 'Retention_1 mean'),
+                                      ('Metrics', 'Retention_1  sem'),
+                                      ('Metrics', 'Retention_3 mean'),
+                                      ('Metrics', 'Retention_3  sem'),
+                                      ('Objective', 'Scalarized'),
+                                      ('Objective', 'offline'),
+                                      ('Tracking metrics', 'Conversion_0 mean'),
+                                      ('Tracking metrics', 'Conversion_0  sem'),
+                                      ('Tracking metrics', 'Conversion_1 mean'),
+                                      ('Tracking metrics', 'Conversion_1  sem')])
+    colm = pd.Index(['0_0', '0_1', '0_2', '0_3', '0_4', '0_5', 'status_quo'])
+    it = pd.DataFrame(index=indx, columns=colm)
+    it.style.set_properties(subset=['text'], **{'width': '300px'})
+    return it
+
+
 if __name__ == '__main__':
-    main()
+    print(another_main())
     print('main - done')

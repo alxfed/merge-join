@@ -5,12 +5,16 @@ import pandas as pd
 
 
 def main():
-    data = pd.DataFrame(
+    data_1 = pd.DataFrame(
+        [[1, 2, 3, 1],
+         [4, 5, 6, 2],
+         [7, 8, 0, 3]], index=['line_1', 'line_3', 'line_2'], columns= ['date', 'day_n', 'tagg', 'sum_total']
+    )
+    data_2 = pd.DataFrame(
         [[1, 2, 3],
          [4, 5, 6],
          [7, 8, 0]], index=['line_1', 'line_3', 'line_2'], columns= ['col_1', 'col_3', 'col_2']
     )
-    new_data = data[['col_2', 'col_3', 'col_1']]
     return
 
 
