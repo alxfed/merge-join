@@ -4,6 +4,16 @@
 import pandas as pd
 
 
+def condition(frame):
+    a = frame  # Yes, this is the whole frame here.
+    return frame
+
+
+def oth(frame):
+    b = frame
+    return frame
+
+
 def main():
     data = pd.DataFrame(
         [[1, 2, 3],
@@ -12,10 +22,10 @@ def main():
     )
     df = data.copy()
     df2 = data.copy()
-    condition = (data == 3)
-    replacement = df.mask(cond=condition, inplace=True, other='wow!')
-    other_replacement = df2.where(cond=condition, inplace=True, other='wow!')
-    print(replacement)
+    # condition = (data == 3)
+    replacement = df.mask(cond=condition, other=oth)
+    other_replacement = df2.where(cond=condition, other=oth)
+    print(other_replacement)
     return
 
 if __name__ == '__main__':

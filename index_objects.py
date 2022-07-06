@@ -15,6 +15,8 @@ def main():
     cols = pd.Index(['col_1', 'col_2', 'col_3'], dtype=str, name='columns')
     inde = pd.Index(['line_1', 'line_2', 'line_3'], dtype=str, name='lines')
     result = data_with_row_and_column_names.reindex(index=inde, columns=cols)
+    a = pd.DataFrame()
+    a['col_1'] = result.col_1
     print('ok')
     return
 
@@ -41,5 +43,5 @@ def another_main():
 
 
 if __name__ == '__main__':
-    print(another_main())
+    print(main())
     print('main - done')
